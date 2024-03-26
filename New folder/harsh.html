@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    
+    <style>
+        *{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body{
+    background-color: rgba(0, 0, 0, 0.801);
+}
+
+.container{ /*  this is our normal parent*/
+    display: flex;
+    justify-content: space-around;
+    margin-top: 100px;
+}
+
+.container div {     /* it will be apply on every direct children of the (Container) */
+    position: relative;
+    width: 30%;
+    height: 40vh;
+    overflow: hidden;
+    transition: all 0.1;
+}
+.container .box{  /* this is for background  transition */
+    transition: 1s;
+}
+.container .box img {     /* this is for background img for fitting in the the actual div */
+    transition: all 2s;
+    width: 100%;
+    height: 100%;
+    }
+    .container .child {    /* this propertises for slide  */
+        position: absolute;
+        width: 100%;
+        transition: all 2s;
+        bottom: -100%;
+        color: aliceblue;
+        filter: drop-shadow(10px 10px 5px rgb(0, 20, 201));
+    } 
+
+
+
+         /* all hover part */
+   
+   
+    .container .box:hover{  /* this is for background  tilling and box shadow */
+      box-shadow: 10px 10px 10px rgb(124, 122, 122);
+      transform: rotateX(40deg);
+      border-radius: 20px;
+    }
+    .container .box>img:hover{  /* this is for background blurness */
+        filter: blur(10px);
+    }
+  
+    .container .box:hover .child {  /* this is for slideShow */
+    bottom: -10%;
+}
+    </style>
+</head>
+<body>
+    
+    <!-- this is parent for all child -->
+    <div class="container">
+
+        <!-- first  image -->
+        
+        <div class="box">
+            <!-- this is for background part -->
+            <img src="photo/BMW-Logo.jpg" alt="">
+
+            <!-- this is for slide show -->
+            <div class="child">
+              <img src="photo/bmw.png" alt="">
+            </div>
+          </div>
+   
+   
+          <!-- second image -->
+
+        <div class="box">
+            <!-- this is for background part -->
+            <img src="photo/dodge_logo.jpg" alt="">
+
+            <!-- this is for slide show -->
+            <div class="child">
+              <img src="photo/doge.png" alt="">
+            </div>
+          </div>
+   
+   
+          <!-- third image -->
+          
+        <div class="box">
+            <!-- this is for background part -->
+            <img src="photo/mers_logo.jpg" alt="">
+
+            <!-- this is for slide show -->
+            <div class="child">
+              <img src="photo/mers.png" alt="">
+            </div>
+          </div>
+   
+   
+   
+        </div>
+</body>
+</html>
